@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<title>Litie - Modern CSS3 Calendar Documentation</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/SyntaxHighlighter.css"></link>
+		<script language="javascript" src="js/shCore.js"></script>
+		<script language="javascript" src="js/shBrushCss.js"></script>
+		<script language="javascript" src="js/shBrushXml.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				dp.SyntaxHighlighter.ClipboardSwf = 'js/clipboard.swf';
+				dp.SyntaxHighlighter.HighlightAll('code');
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h1 id="heading">Litie - Modern CSS3 Calendar Pack</h1>
+			<div id="intro">
+				<p id="detail">
+					Created: 07/24/2013<br>
+					Latest update: 01/05/2014<br>
+					By: XronnStudios<br>
+					Version: 1.3<br>
+					Credit to: subtlepatterns.com for the background<br>
+				</p>
+				<p id="support">Hello, there first off I just want to say a big thanks for purchasing this item, if you have any questions that are beyond the scope of this documentation file please contact me at one of the following places.<br>
+				<i>~Sam</i>
+				</p>
+				<p id="contact">
+				www.Support.XronnStudios.com<br>
+				Email: Support@XronnStudios.com<br>
+
+				<span>Note: I aim to reply to all support emails within <b>6 hours</b>!</span>
+				</p>
+			</div>
+
+			<div id="about">
+				<h2>About</h2>
+				<p><b>Litie Calendar</b> is a modern flat CSS3 calendar design that will help you create a multi-functional dynamic website. The calendars use is completely up to you, it could be used to do anything from creating a day-by-day events timetable, to just displaying the current date for your global users. The latest update has been based on your feedback so please get in touch about what you would like to see next happen to this great calendar.</p>
+			</div>
+
+			<div id="installation">
+				<h2>Install</h2>
+				<p>Unzip and open the folder you downloaded from CodeCanyon, you should see a single html file "index" and two folders "css", and "img". For this calendar to show correctly on your website you will need to add the "calendar.css" stylesheet to your directory and then add the following code below between the "&lt;head> &lt;/head>" tags. Note you only need this stylesheet the other two are not required.</p>
+				<pre name="code" class="html">
+				<link type="text/css" rel="stylesheet" href="calendar.css"></link>
+				</pre>
+				<br />
+				<p>
+				Open your website in your favorite text editor then copy the snippet below and paste into your website.</p>
+				<pre name="code" class="html">
+				&lt;div id="red-calendarWrapper">
+					&lt;div id="tableHeader">
+						&lt;div class="day">
+							&lt;a href="">«&lt;/a>&lt;span>14&lt;/span>&lt;a href="#">»&lt;/a>
+						&lt;/div>
+						&lt;div class="month">
+							January
+						&lt;/div>
+					&lt;/div>
+					&lt;table class="calendar">
+						&lt;thead>
+							&lt;tr>
+								&lt;td>Mon&lt;/td>
+								&lt;td>Tue&lt;/td>
+								&lt;td>Wed&lt;/td>
+								&lt;td>Thu&lt;/td>
+								&lt;td>Fri&lt;/td>
+								&lt;td>Sat&lt;/td>
+								&lt;td>Sun&lt;/td>
+							&lt;/tr>
+						&lt;/thead>
+						&lt;tbody>
+							&lt;tr>
+								&lt;td class="inactive">30&lt;/td>
+								&lt;td class="inactive">31&lt;/td>
+								&lt;td>1&lt;/td>
+								&lt;td>2&lt;/td>
+								&lt;td>3&lt;/td>
+								&lt;td>4&lt;/td>
+								&lt;td>5&lt;/td>
+							&lt;/tr>
+							&lt;tr>
+								&lt;td>6&lt;/td>
+								&lt;td>7&lt;/td>
+								&lt;td>8&lt;/td>
+								&lt;td>9&lt;/td>
+								&lt;td>10&lt;/td>
+								&lt;td>11&lt;/td>
+								&lt;td>12&lt;/td>
+							&lt;/tr>
+							&lt;tr>
+								&lt;td>13&lt;/td>
+								&lt;td class="active">14&lt;/td>
+								&lt;td>15&lt;/td>
+								&lt;td>16&lt;/td>
+								&lt;td>17&lt;/td>
+								&lt;td>18&lt;/td>
+								&lt;td>19&lt;/td>
+							&lt;/tr>
+							&lt;tr>
+								&lt;td>20&lt;/td>
+								&lt;td>21&lt;/td>
+								&lt;td>22&lt;/td>
+								&lt;td>23&lt;/td>
+								&lt;td>24&lt;/td>
+								&lt;td>25&lt;/td>
+								&lt;td>26&lt;/td>
+							&lt;/tr>
+							&lt;tr>
+								&lt;td>27&lt;/td>
+								&lt;td>28&lt;/td>
+								&lt;td>29&lt;/td>
+								&lt;td>30&lt;/td>
+								&lt;td>31&lt;/td>
+								&lt;td class="inactive">1&lt;/td>
+								&lt;td class="inactive">2&lt;/td>
+							&lt;/tr>
+						&lt;/tbody>
+					&lt;/table>
+				&lt;/div>
+				</pre>
+				<br />
+			</div>
+
+			<div id="custom">
+				<h2>Customize</h2>
+				<p>If you've got this far your doing great and you may be happy with your current result, you should have beautiful flat <b>red</b> CSS3 calendar staring you in the face. But you might want to display a different colour. Within the code you pasted from the snippet above there ia a key line that will change the way your calendar looks and feels.</p>
+				<pre name="code" class="html">
+					&lt;div id="red-calendarWrapper">
+				</pre>
+				<p>This line of code located on line 1 of the snippet above, it defines which colour your calendar will be at the moment there are six colours to pick from, change this line to any <b>one</b> line below to change the colour of the calender.
+				<br />
+				<pre name="code" class="html">
+					&lt;div id="red-calendarWrapper">
+					&lt;div id="green-calendarWrapper">
+					&lt;div id="blue-calendarWrapper">
+					&lt;div id="purple-calendarWrapper">
+					&lt;div id="orange-calendarWrapper">
+					&lt;div id="yellow-calendarWrapper">
+				</pre>
+				<br />
+				<br />
+				<p>You may also want to add your own colour scheme for the calendar to do this you will need to open up the "calendar.css" stylesheet, and at the bottom you will see the following code;</p>
+				<pre name="code" class="html">
+					/* ----- Red Color ----- */
+					#red-calendarWrapper #tableHeader{background-color: #f17062;}
+					#red-calendarWrapper thead{color: #f17062 !important;}
+					#red-calendarWrapper .active{color: #fff; background-color: #f17062;}
+				</pre>
+				<p>Dulipcate this code from either the snippet above or the code found at the bottom of the stylesheet, and change the colour codes to match your needs simply save and your done!</p>
+			</div>
+
+			<div id="faq">
+				<h2>Frequently Asked Questions</h2>
+				<ul>
+					<li>Q. Are you still working on this item</li>
+					<li>A. yes I have a number of products and I like to cycle through them and update them one at a time, I'm always open to suggestions if you tell me you need it I'm more likely to add it! So please submit your feedback either on the Envato page or using the contact information found at the top of this documentation.</li>
+					<li>Q. My Calendar days show up but its not got any colour</li>
+					<li>A. This will be because you havent linked the stylesheet correctly the first stage of the installation is taking the stylesheet and adding it to your sites directory. Ensure the path is correct and it can be accessed, failing that contact me and i'll be happy to help.</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

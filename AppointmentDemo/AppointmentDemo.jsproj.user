@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ReferenceCachePath>C:\Users\ukcstanfor\AppData\Local\Temp\40pf2uqg_AppointmentDemo_refcache</ReferenceCachePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|iOS'">
+    <DebuggerFlavor>iOSEmulatoriPhone6SPlus</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">
+    <DebuggerFlavor>RippleNexus</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,35 @@
+/*******************************************************************************/
+/* Global Styles - DO NOT INCLUDE */
+/*******************************************************************************/
+body{
+	background-image: url(../img/background.png);
+	background-repeat: repeat;
+}
+.container{
+	padding:0px !important;
+}
+
+#promo h1{
+	margin:0px;
+	padding:0px;
+	color: #fff;
+	font-size: 58px;
+	text-align: center;
+	width: 55%;
+	font-weight: bold;
+	margin: 0 auto;
+	padding-top: 3%;
+}
+
+ul.features {
+    color: #FFFFFF;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 80px;
+}
+#interactive{
+	margin-top:10%;
+}
+.splitter{
+	margin-top:10%;
+}

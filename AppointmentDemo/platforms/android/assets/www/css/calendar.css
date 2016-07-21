@@ -1,0 +1,104 @@
+/*******************************************************************************/
+/* Resetters */
+/*******************************************************************************/
+
+a:link{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:visited{
+	text-decoration: none;
+	color: inherit;
+}
+
+/*******************************************************************************/
+/* Calendar */
+/*******************************************************************************/
+
+#tableHeader{
+	border-radius: 5px 5px 0px 0px;
+	color: #fff;
+	padding: 15px 35px;
+	width: 355px;
+}
+
+#tableHeader .day{
+	font-size: 38px;
+	font-weight: normal;
+	text-align: center;
+}
+
+#tableHeader .day span{
+	font-size: 52px;
+	font-weight: bold;
+	line-height: 70px;
+	text-align: center;
+	padding-left:80px;
+	padding-right: 80px;
+}
+#tableHeader .month{
+	font-size: 28px;
+	text-align: center;
+}
+
+.calendar{
+	background-color: #fff;
+	border-radius: 0px 0px 5px 5px;
+	display: inline-block;
+	padding:10px;
+	color: #363739;
+	-moz-box-shadow: 0 2px 2px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0 2px 2px rgba(0,0,0,.4);
+	box-shadow: 0 2px 2px rgba(0,0,0,.4);
+
+}
+
+.calendar thead{
+	font-weight: bold;
+}
+
+.calendar td{
+	padding: 7px 11px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.inactive{
+	color: #c3c3c3;
+}
+
+.calendar tbody td:hover{
+	background-color: #cbcccc;
+	color: #fff;
+}
+
+/* ----- Red Color ----- */
+#red-calendarWrapper #tableHeader{background-color: #f17062;}
+#red-calendarWrapper thead{color: #f17062 !important;}
+#red-calendarWrapper .active{color: #fff; background-color: #f17062;}
+
+/* ----- Green Color ----- */
+#green-calendarWrapper #tableHeader{background-color: #34c278;}
+#green-calendarWrapper thead{color: #34c278 !important;}
+#green-calendarWrapper .active{color: #fff; background-color: #34c278;}
+
+/* ----- Blue Color ----- */
+#blue-calendarWrapper #tableHeader{background-color: #1b93b7;}
+#blue-calendarWrapper thead{color: #1b93b7 !important;}
+#blue-calendarWrapper .active{color: #fff; background-color:#1b93b7;}
+
+/* ----- Purple Color ----- */
+#purple-calendarWrapper #tableHeader{background-color: #746395;}
+#purple-calendarWrapper thead{color: #746395 !important;}
+#purple-calendarWrapper .active{color: #fff; background-color:#746395;}
+
+/* ----- Orange Color ----- */
+#orange-calendarWrapper #tableHeader{background-color: #FF884D;}
+#orange-calendarWrapper thead{color: #FF884D !important;}
+#orange-calendarWrapper .active{color: #fff; background-color:#FF884D;}
+
+/* ----- Yellow Color ----- */
+#yellow-calendarWrapper #tableHeader{background-color: #F5C63B;}
+#yellow-calendarWrapper thead{color: #F5C63B !important;}
+#yellow-calendarWrapper .active{color: #fff; background-color:#F5C63B;}
