@@ -72,15 +72,40 @@ function GenerateSingleMonthCalender()
 
     document.getElementById("monthValue").innerHTML = 'Febuary';
 
-    document.getElementById("calendarDaysBody").innerHTML = '<tr><td class="inactive">30</td><td class="inactive">31</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>';
+    var bodyString = '';
+    var date = 0;
+    var numDaysInPreviousMonth = 31;
+    var numDaysInThisMonth = 28;
 
-    document.getElementById("calendarDaysBody").innerHTML += '<tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>';
+    for ( row=0; row<5; row++ )
+    {
+        bodyString += '<tr>';
 
-    document.getElementById("calendarDaysBody").innerHTML += '<tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>';
+        if (date <= numDaysInThisMonth)
+        {
+            for (column = 0; column < 7; column++) {
+                if (date <= 0) // lastMonth
+                {
+                    bodyString += '<td class="inactive">' + (date + numDaysInPreviousMonth) + '</td>';
+                }
+                else
+                if (date > numDaysInThisMonth) // next month
+                {
+                    bodyString += '<td class="inactive">' + (date - numDaysInThisMonth) + '</td>';
+                }
+                else
+                {
+                    bodyString += '<td>' + date + '</td>';
+                }
 
-    document.getElementById("calendarDaysBody").innerHTML += '<tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>';
+                date += 1;
+            }
+        }
 
-    document.getElementById("calendarDaysBody").innerHTML += '<tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="inactive">01</td><td class="inactive">02</td></tr>';
+        bodyString += '</tr>';
+    }
+
+    document.getElementById("calendarDaysBody").innerHTML = bodyString;
 }
 
 
