@@ -95,7 +95,8 @@ function GenerateSingleMonthCalender()
                 }
                 else
                 {
-                    bodyString += '<td>' + date + '</td>';
+                    bodyString += '<td><button class="editbtn">' + date + '</button></td>';
+//                    bodyString += '<td>' + date + '</td>';
                 }
 
                 date += 1;
