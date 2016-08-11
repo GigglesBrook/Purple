@@ -95,7 +95,10 @@ function GenerateSingleMonthCalender()
                 }
                 else
                 {
-                    bodyString += '<td><button class="editbtn">' + date + '</button></td>';
+                    var buttonIdString = 'dateButton' + date;
+
+                    bodyString += '<td><button id="' + buttonIdString + '" class="editbtn">' + date + '</button></td>';
+
 //                    bodyString += '<td>' + date + '</td>';
                 }
 
@@ -107,8 +110,32 @@ function GenerateSingleMonthCalender()
     }
 
     document.getElementById("calendarDaysBody").innerHTML = bodyString;
+
+
+    // add some button event listeners
+
+    date = 0;
+    for (row = 0; row < 5; row++)
+    {
+        for (column = 0; column < 7; column++)
+        {
+            if (date >= 0 && date <= numDaysInThisMonth)
+            {
+//                var buttonIdString = 'dateButton' + date;
+//                var buttonIdString = '"dateButton'+ date +'"';
+                var buttonIdString = "dateButton10";
+
+                document.getElementById( buttonIdString ).addEventListener("click", someFunction);
+            }
+        }
+    }
 }
 
+
+function someFunction()
+{ 
+    alert("Pressed") 
+}
 
 
 
