@@ -119,14 +119,12 @@ function GenerateSingleMonthCalender()
     {
         for (column = 0; column < 7; column++)
         {
-            if (date >= 0 && date <= numDaysInThisMonth)
+            if (date > 0 && date <= numDaysInThisMonth)
             {
-//                var buttonIdString = 'dateButton' + date;
-//                var buttonIdString = '"dateButton'+ date +'"';
-                var buttonIdString = "dateButton10";
-
-                document.getElementById( buttonIdString ).addEventListener("click", someFunction);
+                var buttonIdString = '"dateButton'+ date +'"';
+                document.getElementById(buttonIdString).addEventListener("click", someFunction);
             }
+            date += 1;
         }
     }
 }
@@ -134,7 +132,7 @@ function GenerateSingleMonthCalender()
 
 function someFunction()
 { 
-    alert("Pressed") 
+    alert("Pressed");
 }
 
 
