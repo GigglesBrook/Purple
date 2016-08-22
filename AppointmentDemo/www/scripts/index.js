@@ -12,8 +12,10 @@ var maxSize = 65535;
 var g_appointments = [];
 
 // this is called when an error happens in a transaction
-function errorHandler(transaction, error) {
-    alert('Error: ' + error.message + ' code: ' + error.code);
+function errorHandler(transaction, error)
+{
+//    alert('Error: ' + error.message + ' code: ' + error.code);
+    alert('Error: FIX THIS' );
 }
 
 // this is called when a successful transaction happens
@@ -77,6 +79,11 @@ function GenerateSingleMonthCalender()
     var numDaysInPreviousMonth = 31;
     var numDaysInThisMonth = 28;
 
+    var buttonStrings;
+    var buttonDates;
+
+    var buttonCount=0;
+
     for ( row=0; row<5; row++ )
     {
         bodyString += '<tr>';
@@ -95,9 +102,16 @@ function GenerateSingleMonthCalender()
                 }
                 else
                 {
-                    var buttonIdString = 'dateButton' + date;
+                    buttonStrings[buttonCount]='dateButton' + date;
+                    buttonDates[buttonCount]=date;
 
-                    bodyString += '<td><button id="' + buttonIdString + '" class="editbtn">' + date + '</button></td>';
+//                    var buttonIdString = 'dateButton' + date;
+
+                    bodyString += '<td><button id="' + buttonStrings[buttonCount] + '" class="editbtn">' + date + '</button></td>';
+
+
+                    buttonCount++;
+//                    bodyString += '<td><button id="' + buttonIdString + '" class="editbtn">' + date + '</button></td>';
 
 //                    bodyString += '<td>' + date + '</td>';
                 }
@@ -121,8 +135,20 @@ function GenerateSingleMonthCalender()
         {
             if (date > 0 && date <= numDaysInThisMonth)
             {
-                var buttonIdString = '"dateButton'+ date +'"';
-                document.getElementById(buttonIdString).addEventListener("click", someFunction);
+                var buttonIdString = "dateButton";
+                buttonIdString += date;
+
+                var buttonElement = document.getElementById(buttonIdString);
+
+                if ( buttonElement==null )
+                {
+                    alert("Cant find [" + buttonIdString + "]");
+                }
+                else
+                {
+                    buttonElement.addEventListener("click", SomeFunction );
+                    buttonElement.myParam=date;
+                }
             }
             date += 1;
         }
@@ -130,9 +156,11 @@ function GenerateSingleMonthCalender()
 }
 
 
-function someFunction()
-{ 
-    alert("Pressed");
+function SomeFunction( evt )
+{
+    alert ( 'You Selected [' + evt.target.myParam + ']' );
+//    alert('Pressed');
+  //  alert( "Pressed ["+date+"]" );
 }
 
 
