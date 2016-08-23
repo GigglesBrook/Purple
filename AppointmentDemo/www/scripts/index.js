@@ -11,6 +11,8 @@ var displayName = 'WebSqlDB';
 var maxSize = 65535;
 var g_appointments = [];
 
+var g_mainDate=19;
+
 // this is called when an error happens in a transaction
 function errorHandler(transaction, error)
 {
@@ -69,7 +71,7 @@ function processAppointmentResults(transaction, resultAppointments)
 
 function GenerateSingleMonthCalender()
 {
-    document.getElementById("dayValue").innerHTML = '19';
+    document.getElementById("dayValue").innerHTML = g_mainDate;
     //    <a href="">Â«</a><span>17</span><a href="#">Â»</a>   // day should include this but it doesn't work as I'd like
 
     document.getElementById("monthValue").innerHTML = 'Febuary';
@@ -79,10 +81,9 @@ function GenerateSingleMonthCalender()
     var numDaysInPreviousMonth = 31;
     var numDaysInThisMonth = 28;
 
-    var buttonStrings;
-    var buttonDates;
-
-    var buttonCount=0;
+    var buttonIdStrings=["test"];;
+    var buttonDates = [5];
+    var buttonCount = 0;
 
     for ( row=0; row<5; row++ )
     {
@@ -102,18 +103,13 @@ function GenerateSingleMonthCalender()
                 }
                 else
                 {
-                    buttonStrings[buttonCount]='dateButton' + date;
-                    buttonDates[buttonCount]=date;
+                    var buttonIdString = 'dateButton' + date;
 
-//                    var buttonIdString = 'dateButton' + date;
+                    buttonIdStrings[buttonCount]=buttonIdString;
+                    buttonDates[buttonCount] = date;
+                    buttonCount += 1;
 
-                    bodyString += '<td><button id="' + buttonStrings[buttonCount] + '" class="editbtn">' + date + '</button></td>';
-
-
-                    buttonCount++;
-//                    bodyString += '<td><button id="' + buttonIdString + '" class="editbtn">' + date + '</button></td>';
-
-//                    bodyString += '<td>' + date + '</td>';
+                    bodyString += '<td><button id="' + buttonIdString + '" class="editbtn">' + date + '</button></td>';
                 }
 
                 date += 1;
@@ -125,32 +121,20 @@ function GenerateSingleMonthCalender()
 
     document.getElementById("calendarDaysBody").innerHTML = bodyString;
 
-
     // add some button event listeners
 
-    date = 0;
-    for (row = 0; row < 5; row++)
+    for (i = 0; i < buttonCount; i++)
     {
-        for (column = 0; column < 7; column++)
+        var buttonElement=document.getElementById(buttonIdStrings[i]);
+
+        if ( buttonElement == null )
         {
-            if (date > 0 && date <= numDaysInThisMonth)
-            {
-                var buttonIdString = "dateButton";
-                buttonIdString += date;
-
-                var buttonElement = document.getElementById(buttonIdString);
-
-                if ( buttonElement==null )
-                {
-                    alert("Cant find [" + buttonIdString + "]");
-                }
-                else
-                {
-                    buttonElement.addEventListener("click", SomeFunction );
-                    buttonElement.myParam=date;
-                }
-            }
-            date += 1;
+            alert("Cant find [" + buttonIdString + "]");
+        }
+        else
+        {
+            buttonElement.addEventListener("click", SomeFunction );
+            buttonElement.myParam = buttonDates[i];
         }
     }
 }
@@ -158,9 +142,8 @@ function GenerateSingleMonthCalender()
 
 function SomeFunction( evt )
 {
-    alert ( 'You Selected [' + evt.target.myParam + ']' );
-//    alert('Pressed');
-  //  alert( "Pressed ["+date+"]" );
+    g_mainDate = evt.target.myParam;
+    document.getElementById("dayValue").innerHTML = g_mainDate;
 }
 
 
